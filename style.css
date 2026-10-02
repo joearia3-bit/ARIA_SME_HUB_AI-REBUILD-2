@@ -1,0 +1,575 @@
+/* ===================================================================
+   ARIA SME HUB - Stylesheet (Phase 1)
+   Palette: Light Blue background, Gold feature cards, Black/Dark text,
+            Green for success, Red for warnings, White cards.
+   Design: Mobile-first, PNG/Pacific cultural tech touch, accessible contrast.
+   =================================================================== */
+
+:root {
+  /* Colors */
+  --bg-light-blue: #e8f4f8;
+  --bg-card: #ffffff;
+  --text-dark: #111827;
+  --text-muted: #4b5563;
+  
+  --gold-primary: #f59e0b;
+  --gold-hover: #d97706;
+  --gold-light: #fffbe3;
+  --gold-border: #b45309;
+
+  --blue-primary: #0284c7;
+  --blue-hover: #0369a1;
+
+  --green-success: #15803d;
+  --green-bg: #dcfce7;
+  --green-border: #86efac;
+
+  --red-warning: #b91c1c;
+  --red-bg: #fee2e2;
+  --red-border: #fca5a5;
+
+  --border-light: #e2e8f0;
+
+  /* Fonts */
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Radii & Shadows */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* Reset & Base Setup */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-light-blue);
+  color: var(--text-dark);
+  font-family: var(--font-family);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Top Decorative Pacific-inspired Geometric Pattern Bar */
+.pacific-pattern-bar {
+  width: 100%;
+  height: 10px;
+  background: repeating-linear-gradient(
+    45deg,
+    var(--gold-primary),
+    var(--gold-primary) 12px,
+    var(--blue-primary) 12px,
+    var(--blue-primary) 24px,
+    var(--text-dark) 24px,
+    var(--text-dark) 36px
+  );
+}
+
+/* App Container - Mobile First Max Width */
+.app-container {
+  width: 100%;
+  max-width: 520px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* App Header */
+.app-header {
+  background: var(--bg-card);
+  padding: 16px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  border-left: 6px solid var(--gold-primary);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-badge {
+  background-color: var(--gold-primary);
+  color: var(--text-dark);
+  font-weight: 900;
+  font-size: 1.25rem;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  letter-spacing: 1px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.brand-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.2;
+}
+
+.brand-subtitle {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--blue-primary);
+  margin-top: 2px;
+}
+
+/* Main Content Area */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Hero Section Card */
+.hero-card {
+  background: var(--bg-card);
+  padding: 20px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border-light);
+}
+
+.hero-main-msg {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.hero-sub-msg {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--blue-primary);
+  letter-spacing: 0.5px;
+}
+
+.hero-divider {
+  border: 0;
+  height: 2px;
+  background: var(--gold-primary);
+  margin: 12px 0;
+}
+
+.hero-description {
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  line-height: 1.4;
+}
+
+/* Status Banner */
+.status-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: var(--shadow-card);
+}
+
+.status-banner.warning {
+  background-color: var(--red-bg);
+  color: var(--red-warning);
+  border: 1px solid var(--red-border);
+}
+
+.status-banner.info {
+  background-color: var(--gold-light);
+  color: var(--text-dark);
+  border: 1px solid var(--gold-primary);
+}
+
+.status-banner.success {
+  background-color: var(--green-bg);
+  color: var(--green-success);
+  border: 1px solid var(--green-border);
+}
+
+.close-banner-btn {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: inherit;
+  padding: 0 4px;
+  line-height: 1;
+}
+
+/* Action Grid (6 Key Buttons) */
+.action-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+/* Gold Feature Buttons (Large Touch Targets) */
+.action-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  min-height: 64px;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+  width: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.gold-card {
+  background-color: var(--gold-primary);
+  color: var(--text-dark);
+  border-bottom: 4px solid var(--gold-border);
+  box-shadow: var(--shadow-card);
+}
+
+.gold-card:hover, .gold-card:focus-visible {
+  background-color: var(--gold-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+  outline: 3px solid var(--text-dark);
+}
+
+.gold-card:active {
+  transform: translateY(0);
+  border-bottom-width: 2px;
+}
+
+.action-icon {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+.action-label {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+/* Modals & Overlays */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(17, 24, 39, 0.6);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 1000;
+}
+
+.modal-card {
+  background: var(--bg-card);
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 2px solid var(--gold-primary);
+}
+
+.modal-header {
+  background: var(--bg-light-blue);
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.modal-header h2 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.close-modal-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--text-dark);
+  cursor: pointer;
+  padding: 0 8px;
+  line-height: 1;
+}
+
+.modal-body {
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.modal-footer {
+  padding: 14px 20px;
+  background: #f8fafc;
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Button Styles inside Modals */
+.btn-primary, .btn-secondary, .btn-back, .btn-warning-outline {
+  min-height: 48px;
+  padding: 12px 20px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  transition: background-color 0.15s;
+}
+
+.btn-primary {
+  background-color: var(--gold-primary);
+  color: var(--text-dark);
+}
+
+.btn-primary:hover {
+  background-color: var(--gold-hover);
+}
+
+.btn-secondary {
+  background-color: var(--blue-primary);
+  color: #ffffff;
+}
+
+.btn-secondary:hover {
+  background-color: var(--blue-hover);
+}
+
+.btn-back {
+  background-color: var(--text-dark);
+  color: #ffffff;
+  width: 100%;
+}
+
+.btn-back:hover {
+  background-color: #374151;
+}
+
+.btn-warning-outline {
+  background: transparent;
+  border: 2px solid var(--red-warning);
+  color: var(--red-warning);
+}
+
+.btn-warning-outline:hover {
+  background: var(--red-bg);
+}
+
+/* Scan Options & Preview */
+.scan-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hidden-file-input {
+  display: none;
+}
+
+.preview-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.preview-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.image-frame {
+  width: 100%;
+  max-height: 250px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 2px solid var(--border-light);
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Alert Boxes Inside Modals */
+.alert-box {
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.alert-box.warning {
+  background-color: var(--red-bg);
+  color: var(--red-warning);
+  border: 1px solid var(--red-border);
+}
+
+.alert-box.success {
+  background-color: var(--green-bg);
+  color: var(--green-success);
+  border: 1px solid var(--green-border);
+}
+
+/* Chat Specific Styles */
+.chat-modal-card {
+  height: 85vh;
+}
+
+.chat-modal-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+  gap: 12px;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  background-color: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 380px;
+}
+
+.chat-bubble {
+  max-width: 85%;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.chat-bubble.system {
+  background-color: var(--gold-light);
+  color: var(--text-dark);
+  border: 1px solid var(--gold-primary);
+  align-self: flex-start;
+  border-bottom-left-radius: 2px;
+}
+
+.chat-bubble.user {
+  background-color: var(--blue-primary);
+  color: #ffffff;
+  align-self: flex-end;
+  border-bottom-right-radius: 2px;
+}
+
+.chat-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.chat-textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 1rem;
+  resize: none;
+  outline: none;
+}
+
+.chat-textarea:focus {
+  border-color: var(--blue-primary);
+}
+
+.chat-controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.chat-controls button {
+  flex: 1;
+}
+
+/* Informational Modal Specifics */
+.text-center {
+  text-align: center;
+}
+
+.large-info-icon {
+  font-size: 3.5rem;
+  margin-bottom: 8px;
+}
+
+.info-status-text {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+/* Footer */
+.app-footer {
+  text-align: center;
+  padding: 16px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.footer-note {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--blue-primary);
+  margin-top: 2px;
+}
+
+/* Utility Helper */
+.hidden {
+  display: none !important;
+}
+
+/* Desktop Responsiveness */
+@media (min-width: 640px) {
+  .action-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
