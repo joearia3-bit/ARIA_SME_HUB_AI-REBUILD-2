@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ARIA SME HUB - AI-Powered Opportunities for Papua New Guinea">
+  <title>ARIA SME HUB</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Decorative Cultural Pattern Bar -->
+  <div class="pacific-pattern-bar" aria-hidden="true"></div>
+
+  <div class="app-container">
+
+    <!-- Header / Branding Section -->
+    <header class="app-header">
+      <div class="logo-container">
+        <div class="logo-badge">ARIA</div>
+        <div class="brand-text">
+          <h1 class="brand-title">ARIA SME HUB</h1>
+          <p class="brand-subtitle">AI-Powered Opportunities for Papua New Guinea</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      
+      <!-- Intro & Hero Card -->
+      <section class="hero-card">
+        <h2 class="hero-main-msg">Turn What You Have Into Opportunity</h2>
+        <p class="hero-sub-msg">Discover. Create. Connect. Grow.</p>
+        <hr class="hero-divider">
+        <p class="hero-description">
+          Use ARIA to explore business ideas, identify opportunities, discover markets and turn what you have into potential income.
+        </p>
+      </section>
+
+      <!-- Status/Notification Banner (For Quick Feedback) -->
+      <div id="status-banner" class="status-banner hidden" role="alert" aria-live="polite">
+        <span id="status-message"></span>
+        <button id="close-banner-btn" class="close-banner-btn" aria-label="Close notification">&times;</button>
+      </div>
+
+      <!-- Main Action Buttons Grid (6 Primary Tools) -->
+      <section class="action-grid" aria-label="Main Menu Tools">
+
+        <button class="action-card gold-card" id="btn-scan">
+          <span class="action-icon">📷</span>
+          <span class="action-label">SCAN WITH ARIA</span>
+        </button>
+
+        <button class="action-card gold-card" id="btn-talk">
+          <span class="action-icon">🎤</span>
+          <span class="action-label">TALK WITH ARIA</span>
+        </button>
+
+        <button class="action-card gold-card" id="btn-chat">
+          <span class="action-icon">💬</span>
+          <span class="action-label">CHAT WITH ARIA</span>
+        </button>
+
+        <button class="action-card gold-card" id="btn-idea">
+          <span class="action-icon">💡</span>
+          <span class="action-label">FIND A BUSINESS IDEA</span>
+        </button>
+
+        <button class="action-card gold-card" id="btn-markets">
+          <span class="action-icon">🛒</span>
+          <span class="action-label">FIND MARKETS</span>
+        </button>
+
+        <button class="action-card gold-card" id="btn-support">
+          <span class="action-icon">🤝</span>
+          <span class="action-label">FIND SUPPORT</span>
+        </button>
+
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>&copy; ARIA SME HUB — Papua New Guinea</p>
+      <p class="footer-note">Phase 1 Interface Build</p>
+    </footer>
+
+  </div>
+
+  <!-- =================================================================== -->
+  <!-- MODALS & VIEW OVERLAYS                                              -->
+  <!-- =================================================================== -->
+
+  <!-- SCAN WITH ARIA MODAL -->
+  <div id="modal-scan" class="modal-overlay hidden" role="dialog" aria-labelledby="scan-modal-title" aria-modal="true">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2 id="scan-modal-title">📷 Scan With ARIA</h2>
+        <button class="close-modal-btn" id="close-scan-modal" aria-label="Close">&times;</button>
+      </div>
+      
+      <div class="modal-body">
+        <p class="modal-instruction">Photograph items, raw materials, or craft items to discover potential market opportunities.</p>
+        
+        <!-- Action Options -->
+        <div class="scan-options">
+          <button id="btn-take-photo" class="btn-secondary">
+            <span class="btn-icon">📷</span> TAKE PHOTO
+          </button>
+          
+          <button id="btn-choose-image" class="btn-primary">
+            <span class="btn-icon">🖼️</span> CHOOSE IMAGE
+          </button>
+
+          <!-- Hidden Native File Input -->
+          <input type="file" id="file-input" accept="image/*" class="hidden-file-input">
+        </div>
+
+        <!-- Scan Alerts & Preview Box -->
+        <div id="scan-alert" class="alert-box hidden" role="alert"></div>
+
+        <div id="preview-container" class="preview-container hidden">
+          <h3 class="preview-title">Image Preview</h3>
+          <div class="image-frame">
+            <img id="image-preview" src="" alt="Selected image preview">
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-back" id="back-scan-modal">← Back to Main Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHAT WITH ARIA MODAL -->
+  <div id="modal-chat" class="modal-overlay hidden" role="dialog" aria-labelledby="chat-modal-title" aria-modal="true">
+    <div class="modal-card chat-modal-card">
+      <div class="modal-header">
+        <h2 id="chat-modal-title">💬 Chat With ARIA</h2>
+        <button class="close-modal-btn" id="close-chat-modal" aria-label="Close">&times;</button>
+      </div>
+      
+      <div class="modal-body chat-modal-body">
+        <!-- Message History Log -->
+        <div id="chat-messages" class="chat-messages" aria-live="polite">
+          <!-- Default initial message will be injected here via JavaScript -->
+        </div>
+
+        <!-- Input Area -->
+        <div class="chat-input-container">
+          <textarea id="chat-text-input" class="chat-textarea" placeholder="Type your question or message here..." rows="2"></textarea>
+          <div class="chat-controls">
+            <button id="btn-chat-clear" class="btn-warning-outline">Clear Chat</button>
+            <button id="btn-chat-send" class="btn-primary">Send ➔</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-back" id="back-chat-modal">← Back to Main Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PLACEHOLDER TOOL MODAL (For Info/Coming Soon tools) -->
+  <div id="modal-info" class="modal-overlay hidden" role="dialog" aria-labelledby="info-modal-title" aria-modal="true">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2 id="info-modal-title">Tool Status</h2>
+        <button class="close-modal-btn" id="close-info-modal" aria-label="Close">&times;</button>
+      </div>
+      
+      <div class="modal-body text-center">
+        <div id="info-modal-icon" class="large-info-icon">ℹ️</div>
+        <p id="info-modal-text" class="info-status-text"></p>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-back" id="back-info-modal">← Back to Main Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
