@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ARIA SME HUB - AI-Powered Opportunities for Papua New Guinea">
-  <title>ARIA SME HUB</title>
+  <meta name="description" content="ARIA SME HUB - AI-Powered Business Opportunity Platform for Papua New Guinea">
+  <title>ARIA SME HUB — Phase 2</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Top Decorative Cultural Pattern Bar -->
+  <!-- PNG Cultural Geometric Pattern Bar -->
   <div class="pacific-pattern-bar" aria-hidden="true"></div>
 
   <div class="app-container">
@@ -23,58 +23,78 @@
           <p class="brand-subtitle">AI-Powered Opportunities for Papua New Guinea</p>
         </div>
       </div>
+      <button id="btn-settings-toggle" class="btn-icon-only" title="AI Settings" aria-label="Settings">⚙️</button>
     </header>
 
     <!-- Main Content -->
     <main class="main-content">
       
-      <!-- Intro & Hero Card -->
+      <!-- Hero Banner -->
       <section class="hero-card">
         <h2 class="hero-main-msg">Turn What You Have Into Opportunity</h2>
         <p class="hero-sub-msg">Discover. Create. Connect. Grow.</p>
         <hr class="hero-divider">
         <p class="hero-description">
-          Use ARIA to explore business ideas, identify opportunities, discover markets and turn what you have into potential income.
+          Use ARIA to explore business ideas, identify opportunities, discover markets, and turn what you have into potential income.
         </p>
+        <div class="phase2-badge">✨ Phase 2 Live AI Engine Enabled</div>
       </section>
 
-      <!-- Status/Notification Banner (For Quick Feedback) -->
+      <!-- Status/Notification Banner -->
       <div id="status-banner" class="status-banner hidden" role="alert" aria-live="polite">
         <span id="status-message"></span>
         <button id="close-banner-btn" class="close-banner-btn" aria-label="Close notification">&times;</button>
       </div>
 
-      <!-- Main Action Buttons Grid (6 Primary Tools) -->
+      <!-- Main Navigation Buttons (6 Core Tools) -->
       <section class="action-grid" aria-label="Main Menu Tools">
 
         <button class="action-card gold-card" id="btn-scan">
           <span class="action-icon">📷</span>
-          <span class="action-label">SCAN WITH ARIA</span>
+          <div class="action-text-wrapper">
+            <span class="action-label">SCAN WITH ARIA</span>
+            <span class="action-sublabel">Analyze crops, crafts & items</span>
+          </div>
         </button>
 
         <button class="action-card gold-card" id="btn-talk">
           <span class="action-icon">🎤</span>
-          <span class="action-label">TALK WITH ARIA</span>
+          <div class="action-text-wrapper">
+            <span class="action-label">TALK WITH ARIA</span>
+            <span class="action-sublabel">Voice input in English & Tok Pisin</span>
+          </div>
         </button>
 
         <button class="action-card gold-card" id="btn-chat">
           <span class="action-icon">💬</span>
-          <span class="action-label">CHAT WITH ARIA</span>
+          <div class="action-text-wrapper">
+            <span class="action-label">CHAT WITH ARIA</span>
+            <span class="action-sublabel">PNG SME Business Assistant</span>
+          </div>
         </button>
 
         <button class="action-card gold-card" id="btn-idea">
           <span class="action-icon">💡</span>
-          <span class="action-label">FIND A BUSINESS IDEA</span>
+          <div class="action-text-wrapper">
+            <span class="action-label">FIND A BUSINESS IDEA</span>
+            <span class="action-sublabel">Custom ideas by land, budget & skills</span>
+          </div>
         </button>
 
         <button class="action-card gold-card" id="btn-markets">
           <span class="action-icon">🛒</span>
-          <span class="action-label">FIND MARKETS</span>
+          <div class="action-text-wrapper">
+            <span class="action-label">FIND MARKETS</span>
+            <span class="action-sublabel">Prices (PGK), buyers & locations</span>
+          </div>
         </button>
 
         <button class="action-card gold-card" id="btn-support">
           <span class="action-icon">🤝</span>
-          <span class="action-label">FIND SUPPORT</span>
+          <div class="action-text-wrapper">
+            <span class="action-label">FIND SUPPORT</span>
+            <span class="action-sublabel">SMEC, loans, grants & training</span>
+          </div>
         </button>
 
       </section>
@@ -84,49 +104,76 @@
     <!-- Footer -->
     <footer class="app-footer">
       <p>&copy; ARIA SME HUB — Papua New Guinea</p>
-      <p class="footer-note">Phase 1 Interface Build</p>
+      <p class="footer-note">Phase 2 AI Engine & Interactive Tools Active</p>
     </footer>
 
   </div>
 
   <!-- =================================================================== -->
-  <!-- MODALS & VIEW OVERLAYS                                              -->
+  <!-- MODALS & FEATURE INTERFACES                                         -->
   <!-- =================================================================== -->
 
-  <!-- SCAN WITH ARIA MODAL -->
+  <!-- 1. SCAN WITH ARIA MODAL -->
   <div id="modal-scan" class="modal-overlay hidden" role="dialog" aria-labelledby="scan-modal-title" aria-modal="true">
     <div class="modal-card">
       <div class="modal-header">
-        <h2 id="scan-modal-title">📷 Scan With ARIA</h2>
+        <h2 id="scan-modal-title">📷 AI Image Analysis</h2>
         <button class="close-modal-btn" id="close-scan-modal" aria-label="Close">&times;</button>
       </div>
       
       <div class="modal-body">
-        <p class="modal-instruction">Photograph items, raw materials, or craft items to discover potential market opportunities.</p>
+        <p class="modal-instruction">Photograph items, crops, timber, fish, or crafts to receive instant market value and income opportunities.</p>
         
-        <!-- Action Options -->
         <div class="scan-options">
           <button id="btn-take-photo" class="btn-secondary">
-            <span class="btn-icon">📷</span> TAKE PHOTO
+            <span class="btn-icon">📷</span> TAKE / CAPTURE PHOTO
           </button>
           
           <button id="btn-choose-image" class="btn-primary">
-            <span class="btn-icon">🖼️</span> CHOOSE IMAGE
+            <span class="btn-icon">🖼️</span> CHOOSE IMAGE FROM GALLERY
           </button>
 
-          <!-- Hidden Native File Input -->
-          <input type="file" id="file-input" accept="image/*" class="hidden-file-input">
+          <!-- Hidden Native Inputs -->
+          <input type="file" id="file-input-gallery" accept="image/*" class="hidden-file-input">
+          <input type="file" id="file-input-camera" accept="image/*" capture="environment" class="hidden-file-input">
         </div>
 
-        <!-- Scan Alerts & Preview Box -->
         <div id="scan-alert" class="alert-box hidden" role="alert"></div>
 
         <div id="preview-container" class="preview-container hidden">
-          <h3 class="preview-title">Image Preview</h3>
+          <h3 class="preview-title">Uploaded Item</h3>
           <div class="image-frame">
-            <img id="image-preview" src="" alt="Selected image preview">
+            <img id="image-preview" src="" alt="Selected item preview">
+          </div>
+          <button id="btn-analyze-image" class="btn-success">
+            ✨ ANALYZE WITH ARIA AI
+          </button>
+        </div>
+
+        <!-- AI Analysis Results Display -->
+        <div id="scan-results" class="results-card hidden">
+          <div class="result-header">
+            <span class="result-badge" id="res-category">Agricultural Produce</span>
+            <h3 id="res-title">Detected Resource</h3>
+          </div>
+          <div class="result-section">
+            <h4>💰 Estimated Value (PGK):</h4>
+            <p id="res-value" class="highlight-text">-</p>
+          </div>
+          <div class="result-section">
+            <h4>💡 Income Opportunities:</h4>
+            <ul id="res-ideas" class="bullet-list"></ul>
+          </div>
+          <div class="result-section">
+            <h4>📋 Value Addition Steps:</h4>
+            <ol id="res-steps" class="step-list"></ol>
+          </div>
+          <div class="result-section">
+            <h4>🛒 Potential Buyers:</h4>
+            <p id="res-buyers">-</p>
           </div>
         </div>
+
       </div>
 
       <div class="modal-footer">
@@ -135,7 +182,54 @@
     </div>
   </div>
 
-  <!-- CHAT WITH ARIA MODAL -->
+  <!-- 2. TALK WITH ARIA MODAL -->
+  <div id="modal-talk" class="modal-overlay hidden" role="dialog" aria-labelledby="talk-modal-title" aria-modal="true">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2 id="talk-modal-title">🎤 Talk With ARIA</h2>
+        <button class="close-modal-btn" id="close-talk-modal" aria-label="Close">&times;</button>
+      </div>
+      
+      <div class="modal-body text-center">
+        <p class="modal-instruction">Speak in English or Tok Pisin to ask ARIA questions about your business or resources.</p>
+        
+        <div class="lang-selector-group">
+          <label for="talk-lang-select">Language:</label>
+          <select id="talk-lang-select" class="form-select">
+            <option value="en-PG">English (PNG)</option>
+            <option value="tpi">Tok Pisin</option>
+          </select>
+        </div>
+
+        <div class="mic-container">
+          <button id="btn-mic-start" class="mic-button" aria-label="Start recording">
+            <span class="mic-icon">🎤</span>
+          </button>
+          <p id="mic-status-text" class="mic-status">Tap microphone to speak</p>
+        </div>
+
+        <div id="voice-transcript-box" class="transcript-box hidden">
+          <p class="transcript-label">You said:</p>
+          <p id="voice-transcript" class="transcript-text">...</p>
+        </div>
+
+        <div id="voice-response-box" class="voice-response-card hidden">
+          <div class="response-header">
+            <span>ARIA Answer:</span>
+            <button id="btn-speak-again" class="btn-small">🔊 Listen</button>
+          </div>
+          <p id="voice-response-text" class="response-text"></p>
+        </div>
+
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-back" id="back-talk-modal">← Back to Main Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. CHAT WITH ARIA MODAL -->
   <div id="modal-chat" class="modal-overlay hidden" role="dialog" aria-labelledby="chat-modal-title" aria-modal="true">
     <div class="modal-card chat-modal-card">
       <div class="modal-header">
@@ -144,14 +238,20 @@
       </div>
       
       <div class="modal-body chat-modal-body">
-        <!-- Message History Log -->
-        <div id="chat-messages" class="chat-messages" aria-live="polite">
-          <!-- Default initial message will be injected here via JavaScript -->
+        
+        <!-- Suggested Quick Prompts -->
+        <div class="quick-chips-container">
+          <button class="chip-btn" data-prompt="How do I register a small business with SME Corporation?">📋 Register Business</button>
+          <button class="chip-btn" data-prompt="What are current prices for vanilla and cocoa in PNG?">🍫 Cocoa & Vanilla Prices</button>
+          <button class="chip-btn" data-prompt="Olsem wanem bilong statim kakaruk mama wok business?">🐓 Kakaruk Project</button>
         </div>
+
+        <!-- Message History Log -->
+        <div id="chat-messages" class="chat-messages" aria-live="polite"></div>
 
         <!-- Input Area -->
         <div class="chat-input-container">
-          <textarea id="chat-text-input" class="chat-textarea" placeholder="Type your question or message here..." rows="2"></textarea>
+          <textarea id="chat-text-input" class="chat-textarea" placeholder="Ask a question in English or Tok Pisin..." rows="2"></textarea>
           <div class="chat-controls">
             <button id="btn-chat-clear" class="btn-warning-outline">Clear Chat</button>
             <button id="btn-chat-send" class="btn-primary">Send ➔</button>
@@ -165,21 +265,152 @@
     </div>
   </div>
 
-  <!-- PLACEHOLDER TOOL MODAL (For Info/Coming Soon tools) -->
-  <div id="modal-info" class="modal-overlay hidden" role="dialog" aria-labelledby="info-modal-title" aria-modal="true">
+  <!-- 4. FIND A BUSINESS IDEA TOOL MODAL -->
+  <div id="modal-idea" class="modal-overlay hidden" role="dialog" aria-labelledby="idea-modal-title" aria-modal="true">
     <div class="modal-card">
       <div class="modal-header">
-        <h2 id="info-modal-title">Tool Status</h2>
-        <button class="close-modal-btn" id="close-info-modal" aria-label="Close">&times;</button>
+        <h2 id="idea-modal-title">💡 PNG Business Idea Finder</h2>
+        <button class="close-modal-btn" id="close-idea-modal" aria-label="Close">&times;</button>
       </div>
       
-      <div class="modal-body text-center">
-        <div id="info-modal-icon" class="large-info-icon">ℹ️</div>
-        <p id="info-modal-text" class="info-status-text"></p>
+      <div class="modal-body">
+        <p class="modal-instruction">Select your location and available assets to receive custom income opportunities.</p>
+        
+        <form id="idea-form" class="wizard-form">
+          <div class="form-group">
+            <label for="idea-region">1. Select Region / Province Type:</label>
+            <select id="idea-region" class="form-select" required>
+              <option value="highlands">Highlands Region (Cool climate, fertile land)</option>
+              <option value="coastal">Coastal / Island Region (Sea access, coconut, fish)</option>
+              <option value="urban">Urban Center (Port Moresby, Lae, Mt Hagen, Goroka)</option>
+              <option value="rural">Rural / Remote Community</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="idea-resource">2. What resources or skills do you have?</label>
+            <select id="idea-resource" class="form-select" required>
+              <option value="land">Customary Land / Garden Space</option>
+              <option value="craft">Handicraft / Bilum / Woodwork Skills</option>
+              <option value="sea">Boat / Canoe / Fishing Gear</option>
+              <option value="kitchen">Baking / Cooking / Catering Setup</option>
+              <option value="phone">Smartphone & Digital Skills</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="idea-budget">3. Starting Capital (PNG Kina):</label>
+            <select id="idea-budget" class="form-select" required>
+              <option value="zero">K0 (No Money — Labor & Skills Only)</option>
+              <option value="low">K50 – K200 (Small Starter)</option>
+              <option value="medium">K200 – K1,000 (Medium Scale)</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn-primary full-width">🔍 GENERATE BUSINESS PLANS</button>
+        </form>
+
+        <div id="idea-results" class="idea-results-container hidden">
+          <h3>Tailored Business Opportunities:</h3>
+          <div id="idea-cards-wrapper" class="idea-cards-grid"></div>
+        </div>
+
       </div>
 
       <div class="modal-footer">
-        <button class="btn-back" id="back-info-modal">← Back to Main Menu</button>
+        <button class="btn-back" id="back-idea-modal">← Back to Main Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. FIND MARKETS MODAL -->
+  <div id="modal-markets" class="modal-overlay hidden" role="dialog" aria-labelledby="markets-modal-title" aria-modal="true">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2 id="markets-modal-title">🛒 PNG Market Directory & Prices</h2>
+        <button class="close-modal-btn" id="close-markets-modal" aria-label="Close">&times;</button>
+      </div>
+      
+      <div class="modal-body">
+        <p class="modal-instruction">Search local crop prices (PGK), market locations, and certified local buyers.</p>
+        
+        <div class="search-filter-box">
+          <input type="text" id="market-search-input" class="search-input" placeholder="Search item (e.g., Vanilla, Cocoa, Coffee, Fish, Bilum)...">
+        </div>
+
+        <div class="market-list-container">
+          <table class="market-table">
+            <thead>
+              <tr>
+                <th>Commodity / Item</th>
+                <th>Location / Buyer</th>
+                <th>Price Est. (PGK)</th>
+              </tr>
+            </thead>
+            <tbody id="market-table-body">
+              <!-- Dynamically Populated by JS -->
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-back" id="back-markets-modal">← Back to Main Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. FIND SUPPORT MODAL -->
+  <div id="modal-support" class="modal-overlay hidden" role="dialog" aria-labelledby="support-modal-title" aria-modal="true">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2 id="support-modal-title">🤝 PNG SME Support Directory</h2>
+        <button class="close-modal-btn" id="close-support-modal" aria-label="Close">&times;</button>
+      </div>
+      
+      <div class="modal-body">
+        <p class="modal-instruction">Access official government, banking, and community funding resources for Papua New Guinea.</p>
+        
+        <div class="support-cards-grid" id="support-directory-grid">
+          <!-- Dynamically Populated by JS -->
+        </div>
+
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-back" id="back-support-modal">← Back to Main Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. SETTINGS MODAL (Gemini Live API Toggle) -->
+  <div id="modal-settings" class="modal-overlay hidden" role="dialog" aria-labelledby="settings-modal-title" aria-modal="true">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2 id="settings-modal-title">⚙️ AI Engine Settings</h2>
+        <button class="close-modal-btn" id="close-settings-modal" aria-label="Close">&times;</button>
+      </div>
+      
+      <div class="modal-body">
+        <p class="modal-instruction">ARIA operates seamlessly offline with our built-in PNG Knowledge Engine. You can optionally enter a Google Gemini API key below to enable online AI vision & speech reasoning.</p>
+
+        <div class="form-group">
+          <label for="gemini-api-key">Google Gemini API Key (Optional):</label>
+          <input type="password" id="gemini-api-key" class="form-input" placeholder="AIzaSy...">
+          <small class="help-text">Keys are saved locally in your browser storage only.</small>
+        </div>
+
+        <div class="button-group">
+          <button id="btn-save-key" class="btn-primary">Save API Key</button>
+          <button id="btn-clear-key" class="btn-warning-outline">Clear Saved Key</button>
+        </div>
+
+        <div id="key-status-msg" class="alert-box hidden"></div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-back" id="back-settings-modal">← Back to Main Menu</button>
       </div>
     </div>
   </div>
